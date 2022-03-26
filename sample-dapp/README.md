@@ -1,5 +1,5 @@
 # Fixing react.js web3:
-## in current React.js versions(above 7, i guess)
+## ]n current React.js versions(above 7, i guess)
 we need to make some changes to prevent errors on polyfill:
 
 ## Steps
