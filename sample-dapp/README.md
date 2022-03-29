@@ -1,4 +1,43 @@
-# Fixing react.js web3:
+# Sample-dapp project:
+## Step 0. Create new folder named: sample-dapp(or clone this repo)
+### - `mkdir sample-dapp`
+
+## Step1. Create smart contract project(ex: truffle project):
+Inside sample-dapp project, follow below steps:
+
+### - `mkdir contracts`
+### - `cd contracts`
+### - `truffle init`
+### - Copy `Contacts.sol` into contracts folder.
+### - Create new file named: `2_deploy_contracts.js` inside migrations folder and put below codes in it:
+```
+const Contacts = artifacts.require("Contacts");
+
+module.exports = function (deployer) {
+  deployer.deploy(Contacts);
+};
+```
+
+### - Edit your desire network in `truffle-config.js`
+### - Finally, deploy the contract using `truffle migrate`
+
+## Step2. Create your UI project(ex: react.js project):
+### - `npx create-react-app contacts`
+### - `cd contacts`
+### - Inside src folder, create `config.js` file and insert contract abi and address into that as below:
+
+```
+export const CONTACT_ADDRESS = 'your deployed contract address'; //ex: '0x420094bF66CFD0e13b2b2EE96923c577e9e84637'
+
+export const CONTACT_ABI = [.....]; // Notice: extract abi from build -> Contacts.json
+```
+
+### - Now go to src -> App.js and modify it as this repo.
+### - Finally, `npm start`.
+### - Enjoy! :-)
+
+
+# Note: Fixing react.js web3:
 ## In current React.js versions(above 7, i guess)
 we need to make some changes to prevent errors on polyfill:
 
