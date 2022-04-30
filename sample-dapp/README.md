@@ -51,7 +51,7 @@ OR
 
 - `npm install --save-dev react-app-rewired crypto-browserify stream-browserify assert stream-http https-browserify os-browserify url buffer process`
 
-### 2. Create a file with below contents, and name it as: config-overrides.js
+### 2. Create a file in the root project folder with below contents, and name it as: config-overrides.js
 
 ```
 const webpack = require('webpack');
